@@ -1,0 +1,6 @@
+First you have to import hackathon.sql file.
+Set database name hackathone
+And then run html/login.html
+for the chat window you have to Press (CTRL + R)
+Remaining part of project is under progressing.
+now Enjoy !

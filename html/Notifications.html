@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://j11y.io/demos/plugins/jQuery/autoresize.jquery.js"></script>  
+</head>
+<style type="text/css">
+  body{
+    padding-bottom: 100px;
+  }
+  .colorChange{
+    background-color: #E0E0E0;
+  }
+  .paddi{
+    padding-left: 2vw;    
+    padding-right: 2vw;   
+    padding-top: 2vh;   
+  }
+  .mh{
+    font-weight: 500;
+    font-family:unset;
+  }
+  .btn{
+    background-color: #FAFAFA;
+    border-radius: 5px;
+  }
+  .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+    ::placeholder{
+      color:white;
+    }
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+    .table{
+    text-transform: uppercase;
+
+    }
+    .table > thead > tr > th{
+      font-size: 17px;
+      font-weight: 400;
+      border-bottom:1px solid black;
+    }
+  .bookname{
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #343a40;
+  }
+  .type{
+    text-transform: uppercase;
+    color: #01579B;
+  }
+  .imgselect{
+    user-select: none;
+  }
+  #hideshow{
+    display: none;
+  }
+        /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+      .searchbar:hover > .search_input{
+        width: 150px;
+      }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+      .searchbar:hover > .search_input{
+        width: 10vw;
+      }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+            .searchbar:hover > .search_input{
+        width: 20vw;
+      } 
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) { 
+      .searchbar:hover > .search_input{
+        width: 350px;
+      }
+    }
+
+</style>
+<body>
+  <div class="container-fluid">
+    <div class="float-right">
+      <div class="searchbar">
+            <input class="search_input" type="text" id="myInput" name="" placeholder="Search...">
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          </div>
+    </div>
+    <div class="row colorChange paddi">
+      <div class="col-md-12"><b><h2 class="mh">Notification</h2></b></div>
+    </div>
+    <div class="row paddi table-responsive">
+      <table class="table table-hover" id="tableforall">
+      </table>
+    <center><h4 id="hideshow">No Result Found</h4></center>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+        var check=[],forloopvalue=0,searchnum=0,tablenumber=0;
+      var table1=document.getElementById('tableforall');
+      function tabl(num){
+        if(num==1)
+          table1.innerHTML='<thead><tr><th scope="col">STATIONERY ID</th><th scope="col">Image</th><th scope="col"></th><th scope="col">Accept</th><th scope="col">Reject</th></thead>';
+      }
+        $(document).ready(function(){
+          $('#myInput').on('keyup', function(){
+              var input;
+              input = document.getElementById("myInput");
+              tabl(tablenumber);
+              for(var i=0,tmp=1;i<check.length;i++){
+                var found=false;
+                for(var j=0;j<check[i].length;j++){
+                  if(typeof(check[i][j])=="string")
+                    if(check[i][j].toLowerCase().indexOf(input.value.toLowerCase())>=0)found=true;
+              }
+              if(found){
+                var roo="<tr>";
+                roo+="<td>"+(tmp++)+"</td>";
+                for(var k=1;k<=forloopvalue;k++){
+                    if(typeof(check[i][k])=="string" && k<=searchnum){
+                      var indx=check[i][k].toLowerCase().indexOf(input.value.toLowerCase());
+                    if(indx>=0){
+                      var str=check[i][k].substr(0,indx);
+                      str+='<span style="background-color:#ff9632;">'+check[i][k].substr(indx,input.value.length)+'</span>';
+                      str+=check[i][k].substr(indx+input.value.length);
+                      roo+="<td>"+str+"</td>";
+                    }else
+                      roo+="<td>"+check[i][k]+"</td>";
+                    }else
+                      roo+="<td>"+check[i][k]+"</td>";
+                }
+                roo+="</tr>";
+                if(tablenumber==1)
+                  table1.innerHTML=table1.innerHTML+roo;
+              }
+            }
+          });
+        });
+       function myFunction(loopvalue,tabnum){
+          var input;
+          input = document.getElementById("myInput");
+          tabl(tabnum);
+          for(var i=0,tmp=1;i<check.length;i++){
+            var found=false;
+            for(var j=0;j<check[i].length;j++){
+              if(typeof(check[i][j])=="string")
+                if(check[i][j].toLowerCase().indexOf(input.value.toLowerCase())>=0)found=true;
+          }
+          if(found){
+            var roo="<tr>";
+            roo+="<td>"+(tmp++)+"</td>";
+            for(var k=1;k<=loopvalue;k++){
+                if(typeof(check[i][k])=="string" && k<=4){
+                  var indx=check[i][k].toLowerCase().indexOf(input.value.toLowerCase());
+                if(indx>=0){
+                  var str=check[i][k].substr(0,indx);
+                  str+='<span style="background-color:#2c89f8;">'+check[i][k].substr(indx,input.value.length)+'</span>';
+                  str+=check[i][k].substr(indx+input.value.length);
+                  roo+="<td>"+str+"</td>";
+                }else
+                  roo+="<td>"+check[i][k]+"</td>";
+                }else
+                  roo+="<td>"+check[i][k]+"</td>";
+            }
+            roo+="</tr>";
+            if(tabnum==1)
+              table1.innerHTML=table1.innerHTML+roo;
+          }
+        }
+    }
+   
+        forloopvalue=4;
+        searchnum=2;
+        tablenumber=1;
+        check=[];
+        tabl(1);
+        var type1=1;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {  
+              if (this.readyState == 4 && this.status == 200) {
+                  if(this.responseText=='')
+                      document.getElementById('hideshow').style.display='block';
+                var obj=JSON.parse(this.responseText);
+                for (var i = 0; i < obj.length; i++){
+                  var row = table1.insertRow(0);
+                  check[i]=[];
+                  var no='<tr><th scope="row">User '+i+1+'</th><td>';
+                  check[i][0]=no;
+
+                  check[i][1]='<div class="row"><div class="col-md-2 imgselect"><img src="../img/'+obj[i].pid+'.jpg" width="150" height="150"></div></div>';
+
+                  var Accept='<td class="imgselect"><button type="button" class="btn btn-success">Accept</button></td>';
+                  var dis='<td class="imgselect"><button type="button" class="btn btn-danger">Rejected</button></td>';
+
+                  check[i][2]=Accept;
+                  check[i][3]=dis;
+               }
+                myFunction(3,1);
+              }
+          };
+          xmlhttp.open("POST", "../php/ajax.php", true);
+          xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xmlhttp.send("work=notification");
+</script>
+</html>

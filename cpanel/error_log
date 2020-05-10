@@ -1,0 +1,20 @@
+[18-Dec-2019 06:59:19 UTC] PHP Parse error:  syntax error, unexpected '$_COOKIE' (T_VARIABLE), expecting '(' in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 43
+[18-Dec-2019 06:59:25 UTC] PHP Parse error:  syntax error, unexpected '$_COOKIE' (T_VARIABLE), expecting '(' in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 43
+[18-Dec-2019 06:59:48 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 49
+[18-Dec-2019 06:59:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 51
+[18-Dec-2019 07:00:13 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 49
+[18-Dec-2019 07:00:13 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 51
+[18-Dec-2019 07:00:16 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 49
+[18-Dec-2019 07:00:16 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 51
+[18-Dec-2019 07:00:57 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 49
+[18-Dec-2019 07:00:57 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 52
+[18-Dec-2019 07:01:00 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 49
+[18-Dec-2019 07:01:01 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 52
+[18-Dec-2019 07:01:39 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 50
+[18-Dec-2019 07:01:39 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 52
+[18-Dec-2019 07:01:56 UTC] PHP Notice:  Array to string conversion in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 49
+[18-Dec-2019 07:01:56 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 50
+[18-Dec-2019 07:01:56 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 52
+[18-Dec-2019 07:02:00 UTC] PHP Notice:  Array to string conversion in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 49
+[18-Dec-2019 07:02:00 UTC] PHP Notice:  Undefined offset: 1 in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 50
+[18-Dec-2019 07:02:01 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ybod2d0ubct4/public_html/jeet.shreekhodiyarind.co.in/shared/Books/index.php on line 52
